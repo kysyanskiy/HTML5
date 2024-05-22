@@ -91,8 +91,6 @@ footer {
     height: auto;
     z-index: 0;
     transform: translate(-50%, -50%);
-    background: url('path/to/your/background-video.mp4') no-repeat;
-    background-size: cover;
 }
 
 .video-content {
