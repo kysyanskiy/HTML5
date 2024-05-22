@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрація HTML5 елементів</title>
+    <link rel="stylesheet" href="dop.css">
+</head>
+<body>
+    <header>
+        <h1>Демонстрація HTML5 елементів</h1>
+        <nav>
+            <ul>
+                <li><a href="#video">Відео</a></li>
+                <li><a href="#audio">Звук</a></li>
+                <li><a href="#map">Карта</a></li>
+                <li><a href="#image-map">Посилання на зображенні</a></li>
+                <li><a href="#canvas">Canvas</a></li>
+                <li><a href="#svg">SVG</a></li>
+                <li><a href="#background-video">Фонове відео</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="video">
+            <h2>Відео</h2>
+            <h3>Відео за допомогою iframe</h3>
+            <iframe width="330" height="1080" src="https://www.youtube.com/embed/U14GpQ5K03g?si=4NyO24saPEZxcEJS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <h3>Відео за допомогою тегу video</h3>
+            <video width="560" height="315" controls>
+                <source src="media/video.mp4" type="video/mp4">
+                Ваш браузер не підтримує відтворення відео.
+            </video>
+        </section>
+
+        <section id="audio">
+            <h2>Звук</h2>
+            <audio controls>
+                <source src="media/INTERNET LOVE.mp3" type="audio/mpeg">
+                Ваш браузер не підтримує відтворення звуку.
+            </audio>
+        </section>
+
+        <section id="map">
+            <h2>Карта</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25361.226372573977!2d30.51641314233368!3d50.4505496941917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cef7c91adf7b%3A0x9f1d1e5e7f6b469!2sKyiv%2C%20Ukraine%2C%2002000!5e0!3m2!1sen!2sus!4v1684720413123!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </section>
+
+        <section id="image-map">
+            <h2>Посилання на зображенні</h2>
+            <img src="media/gif1.gif" usemap="#image-map" alt="Map">
+            <map name="image-map">
+                <area shape="rect" coords="34,44,270,350" href="https://www.youtube.com/" alt="Link 1">
+            </map>
+        </section>
+
+        <section id="canvas">
+            <h2>Canvas JavaScript</h2>
+            <canvas id="myCanvas" width="600" height="400"></canvas>
+        </section>
+
+        <section id="svg">
+            <h2>SVG</h2>
+            <svg width="400" height="180">
+                <rect width="300" height="100" style="fill:blue;" />
+                <circle cx="150" cy="90" r="80" stroke="green" stroke-width="4" fill="yellow" />
+                <line x1="0" y1="0" x2="400" y2="180" style="stroke:rgb(255,0,0);stroke-width:2" />
+            </svg>
+        </section>
+
+        <section id="background-video">
+            <h2>Фонове відео</h2>
+            <div class="video-background-container">
+                <video autoplay muted loop class="bg-video">
+                    <source src="media/videobg.mp4" type="video/mp4">
+                </video>
+        </section>
+    </main>
+
+    <footer>
+        <p>© kusyanskiy/Melnychenko</p>
+    </footer>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        context.fillStyle = 'blue';
+        context.fillRect(20, 20, 150, 100);
+
+        context.beginPath();
+        context.arc(300, 200, 50, 0, 2 * Math.PI);
+        context.fillStyle = 'red';
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(400, 300);
+        context.lineTo(500, 350);
+        context.stroke();
+    </script>
+</body>
+</html>
